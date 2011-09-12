@@ -143,17 +143,6 @@
 
 #pragma mark - Special actions
 -(void)info:(id)sender {
-    NSLog(@"Information button click : TODO");
-    /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:
-						  @"Hey, do you see the disclosure button?"
-													message:@"If you're trying to drill down, touch that instead"
-												   delegate:nil
-										  cancelButtonTitle:@"Won't happen again"
-										  otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    */
-    
     InfoViewController *infoView = [[InfoViewController alloc] init];
     infoView.title = @"About";
     [self.navigationController pushViewController:infoView animated:YES];

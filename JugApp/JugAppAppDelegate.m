@@ -2,6 +2,8 @@
 //  JugAppAppDelegate.m
 //  JugApp
 //
+// Linked ti MainWindow.xib
+//
 //  Created by Christophe Hamerling on 20/07/11.
 //  Copyright 2011 chamerling.org. All rights reserved.
 //
@@ -66,7 +68,6 @@
 - (void)dealloc
 {
     [window release];
-    [navController release];
     [navController release];
     [super dealloc];
 }

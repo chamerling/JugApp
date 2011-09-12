@@ -139,13 +139,11 @@
 }
 
 -(void)launchLoadData {
-    NSLog(@"Launching thread");
     [NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];
 }
 
 - (void) loadData {
     dataLoaded = NO;
-    NSLog(@" thread launched");
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self loadDataFromURL:nil];
     dataLoaded = YES;
