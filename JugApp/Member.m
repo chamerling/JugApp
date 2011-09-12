@@ -3,7 +3,7 @@
 //  JugApp
 //
 //  Created by Christophe Hamerling on 25/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 chamerling.org. All rights reserved.
 //
 
 #import "Member.h"

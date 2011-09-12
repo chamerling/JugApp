@@ -3,7 +3,7 @@
 //  JugApp
 //
 //  Created by Christophe Hamerling on 05/09/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 chamerling.org. All rights reserved.
 //
 
 #import "NewViewController.h"
@@ -36,11 +36,17 @@
 {
     //imageNews.layer cornerRadius = 10.0f;
     //imageNews.layer masksToBounds = YES;
-    imageNews.image = [UIImage imageNamed:@"avatar.jpg"]; 
-    imageNews.layer.masksToBounds = YES;
-    imageNews.layer.cornerRadius = 10.0;
-    imageNews.layer.borderWidth = 1.0;
-    imageNews.layer.borderColor = [[UIColor grayColor] CGColor];
+    //imageNews.image = [UIImage imageNamed:@"home_btn_news_default.jpg"]; 
+    //imageNews.layer.masksToBounds = YES;
+    //imageNews.layer.cornerRadius = 10.0;
+    //imageNews.layer.borderWidth = 1.0;
+    //imageNews.layer.borderColor = [[UIColor grayColor] CGColor];
+    
+    contentView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    contentView.layer.shadowOffset = CGSizeMake(10.0f,10.0f);
+    contentView.layer.shadowOpacity = .5f;
+    contentView.layer.shadowRadius = 10.0f;
+    contentView.layer.masksToBounds = YES;
     
     newsBody.backgroundColor = [UIColor whiteColor];
 	//hide the shadow for the UIWebView, nicked from stackoverflow.com/questions/1074320/remove-uiwebview-shadow/
@@ -48,10 +54,10 @@
 		if([wview isKindOfClass:[UIImageView class]]) { wview.hidden = YES; } 
 	}
     
-    newsBody.layer.masksToBounds = YES;
-    newsBody.layer.cornerRadius = 10.0;
-    newsBody.layer.borderWidth = 1.0;
-    newsBody.layer.borderColor = [[UIColor grayColor] CGColor];
+    //newsBody.layer.masksToBounds = YES;
+    //newsBody.layer.cornerRadius = 10.0;
+    //newsBody.layer.borderWidth = 1.0;
+    //newsBody.layer.borderColor = [[UIColor grayColor] CGColor];
 
     if (self.news) {
         [self showNews:self.news];
@@ -83,6 +89,8 @@
     publishedLabel = nil;
     [imageNews release];
     imageNews = nil;
+    [contentView release];
+    contentView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -98,6 +106,7 @@
     [newsBody release];
     [publishedLabel release];
     [imageNews release];
+    [contentView release];
     [super dealloc];
 }
 @end

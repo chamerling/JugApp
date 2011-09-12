@@ -3,7 +3,7 @@
 //  JugApp
 //
 //  Created by Christophe Hamerling on 26/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 chamerling.org. All rights reserved.
 //
 // First section : Short description row + more info row
 // second section : Events row + News row
@@ -247,7 +247,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+      
+    /*
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIActivityIndicatorView *activityView = 
+    [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activityView startAnimating];
+    [cell setAccessoryView:activityView];
+    [activityView stopAnimating];    
+    [activityView release];
+     */
+        
     if (indexPath.section == kSectionPeople) {
         if (indexPath.row == kRowTagMembers) {
             MembersViewController *membersViewController = [[MembersViewController alloc] init];
@@ -283,9 +293,9 @@
             controller.events = events;
             [loader release];
             [events release];
-            
             [self.navigationController pushViewController:controller animated:YES];
             [controller release];
+            
         } else if (indexPath.row == kRowTagNews) {
             NewsViewController *controller = [[NewsViewController alloc] init];
             controller.title = @"News";
@@ -298,6 +308,7 @@
                 
             [self.navigationController pushViewController:controller animated:YES];
             [controller release];
+            
         }
     } else if (indexPath.section == kSectionContact) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -340,8 +351,6 @@
     controller.title = jug.website;
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
-    //NSURL *webURL = [NSURL URLWithString:jug.website];
-    //[[UIApplication sharedApplication] openURL:webURL];
 }
 
 - (void)confirmWebPage {

@@ -2,8 +2,10 @@
 //  FirstLevelViewController.m
 //  JugApp
 //
+//  This is the input screen...
+//
 //  Created by Christophe Hamerling on 21/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 chamerling.org. All rights reserved.
 //
 
 #import "FirstLevelViewController.h"

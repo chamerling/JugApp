@@ -3,7 +3,7 @@
 //  JugApp
 //
 //  Created by Christophe Hamerling on 26/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 chamerling.org. All rights reserved.
 //
 
 #import "JugListViewController.h"
@@ -160,7 +160,7 @@
     JSONLoader *loader = [[JSONLoader alloc] init];
     self.accounts = [loader getJugsFromURL:jugRepository];
     [loader release];
-    [NSThread sleepForTimeInterval:1];
+    //[NSThread sleepForTimeInterval:1];
     [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
 }
 
@@ -187,7 +187,7 @@
     activity.center = newCenter;
     [self.view addSubview:activity];
      */
-    progressAlert = [[ProgressView alloc] initWithLabel:NSLocalizedString(@"Deleting...", @"")];
+    progressAlert = [[ProgressView alloc] initWithLabel:NSLocalizedString(@"Loading...", @"")];
 
 }
 
