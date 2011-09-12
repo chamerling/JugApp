@@ -45,6 +45,8 @@
 		C98C72E313E21810007B08DA /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98C72E213E21810007B08DA /* avatar.jpg */; };
 		C98C72EE13E21D69007B08DA /* MemberDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C72ED13E21D69007B08DA /* MemberDetailsViewController.m */; };
 		C98C72F013E2FCFF007B08DA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98C72EF13E2FCFF007B08DA /* MessageUI.framework */; };
+		C9A0C3DF141E985A004C2AFC /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C3DD141E985A004C2AFC /* EventViewController.m */; };
+		C9A0C3E0141E985A004C2AFC /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A0C3DE141E985A004C2AFC /* EventViewController.xib */; };
 		C9AD7876140D84E5000340F9 /* GravatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD7873140D84E5000340F9 /* GravatarImageView.m */; };
 		C9AD7877140D84E5000340F9 /* AsynchronousImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD7875140D84E5000340F9 /* AsynchronousImageView.m */; };
 		C9AD787A140D8592000340F9 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD7879140D8592000340F9 /* ImageCache.m */; };
@@ -63,7 +65,6 @@
 		C9EB56DC13DE069400167552 /* MembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB56DB13DE069400167552 /* MembersViewController.m */; };
 		C9EB56DF13DE15F200167552 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB56DE13DE15F200167552 /* EventsViewController.m */; };
 		C9EB56E213DE16C100167552 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB56E113DE16C100167552 /* Event.m */; };
-		C9EB56E513DE1B0400167552 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB56E413DE1B0300167552 /* EventDetailViewController.m */; };
 		C9EB56E913DE1E9400167552 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB56E713DE1E9400167552 /* InfoViewController.m */; };
 		C9EB56EA13DE1E9400167552 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EB56E813DE1E9400167552 /* InfoViewController.xib */; };
 		C9F3846313DF2970009A0DEA /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F3844B13DF2970009A0DEA /* NSObject+SBJson.m */; };
@@ -132,6 +133,9 @@
 		C98C72EC13E21D69007B08DA /* MemberDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberDetailsViewController.h; sourceTree = "<group>"; };
 		C98C72ED13E21D69007B08DA /* MemberDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberDetailsViewController.m; sourceTree = "<group>"; };
 		C98C72EF13E2FCFF007B08DA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C9A0C3DC141E985A004C2AFC /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		C9A0C3DD141E985A004C2AFC /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		C9A0C3DE141E985A004C2AFC /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
 		C9AD7872140D84E5000340F9 /* GravatarImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarImageView.h; sourceTree = "<group>"; };
 		C9AD7873140D84E5000340F9 /* GravatarImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarImageView.m; sourceTree = "<group>"; };
 		C9AD7874140D84E5000340F9 /* AsynchronousImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynchronousImageView.h; sourceTree = "<group>"; };
@@ -168,8 +172,6 @@
 		C9EB56DE13DE15F200167552 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		C9EB56E013DE16C100167552 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		C9EB56E113DE16C100167552 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		C9EB56E313DE1B0300167552 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
-		C9EB56E413DE1B0300167552 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		C9EB56E613DE1E9400167552 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		C9EB56E713DE1E9400167552 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		C9EB56E813DE1E9400167552 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		C998CD1D1410FDF700531B65 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				C9A0C3DE141E985A004C2AFC /* EventViewController.xib */,
 				C9F4351E1415771E0067F0B1 /* NewViewController.xib */,
 				C9EB56E813DE1E9400167552 /* InfoViewController.xib */,
 				C971EB6013D78173005518D6 /* MainWindow.xib */,
@@ -475,10 +478,10 @@
 		C9F43519141573130067F0B1 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C9A0C3DC141E985A004C2AFC /* EventViewController.h */,
+				C9A0C3DD141E985A004C2AFC /* EventViewController.m */,
 				C9EB56DD13DE15F200167552 /* EventsViewController.h */,
 				C9EB56DE13DE15F200167552 /* EventsViewController.m */,
-				C9EB56E313DE1B0300167552 /* EventDetailViewController.h */,
-				C9EB56E413DE1B0300167552 /* EventDetailViewController.m */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				C9047D59141E221D00FFAFB3 /* jugapp_icon.png in Resources */,
 				C9047D5B141E224500FFAFB3 /* jugapp_icon.png in Resources */,
 				C9047D5D141E23A700FFAFB3 /* logo_hd.png in Resources */,
+				C9A0C3E0141E985A004C2AFC /* EventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +605,6 @@
 				C9EB56DC13DE069400167552 /* MembersViewController.m in Sources */,
 				C9EB56DF13DE15F200167552 /* EventsViewController.m in Sources */,
 				C9EB56E213DE16C100167552 /* Event.m in Sources */,
-				C9EB56E513DE1B0400167552 /* EventDetailViewController.m in Sources */,
 				C9EB56E913DE1E9400167552 /* InfoViewController.m in Sources */,
 				C9C88B4B13DEA3B40022E3B2 /* JugListViewController.m in Sources */,
 				C9C88B5013DEA4F50022E3B2 /* JugInformation.m in Sources */,
@@ -632,6 +635,7 @@
 				C9AD7882140D92D9000340F9 /* EGORefreshTableHeaderView.m in Sources */,
 				C9F43513141566010067F0B1 /* ProgressView.m in Sources */,
 				C9F4351F1415771E0067F0B1 /* NewViewController.m in Sources */,
+				C9A0C3DF141E985A004C2AFC /* EventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

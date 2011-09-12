@@ -32,6 +32,8 @@
 #define CELL_CONTENT_MARGIN 10.0f
 #define DEFAULT_CELL_HEIGHT 44.0f
 
+#define IMAGE_SIZE 57.0f
+
 @implementation MemberDetailsViewController
 
 @synthesize member;

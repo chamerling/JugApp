@@ -8,7 +8,9 @@
 
 #import "EventsViewController.h"
 #import "Event.h"
-#import "EventDetailViewController.h"
+#import "EventViewController.h"
+
+#import "InfoViewController.h"
 
 
 @implementation EventsViewController
@@ -37,36 +39,8 @@
 - (void)viewDidLoad
 {
     
-    // load the events from remote source : TODO
- /*   NSDate *now = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:now];
-    NSLog(@"%@",dateString);
-    
-    Event *e1 = [[Event alloc] init];
-    e1.title = @"Maven & GWT";
-    e1.description = @"This first event will focus on Maven management tool and on Google Web Toolkit...";
-    e1.date = dateString;
-
-    Event *e2 = [[Event alloc] init];
-    e2.title = @"Android";
-    e2.description = @"This second event will focus on the Android platform...";
-    e2.date = dateString;
-    
-    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:e1, e2, nil];
-    self.events = array;
-    
-    [array release];
-  */
-    
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -125,7 +99,6 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // Configure the cell...
     NSUInteger row = indexPath.row;
     Event *event = [self.events objectAtIndex:row];
     cell.textLabel.text = event.title;
@@ -137,14 +110,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSUInteger selected = indexPath.row;
-    Event *event = [events objectAtIndex:selected]; 
-    EventDetailViewController *detailViewController = [[EventDetailViewController alloc] init];
-    detailViewController.event = event;
-    detailViewController.title = event.title;
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
+    Event *e = [self.events objectAtIndex:indexPath.row]; 
+    EventViewController *controller = [[EventViewController alloc] initWithNibName:@"EventViewController" bundle:nil];
+    controller.event = e;
+    controller.title = @"Event";
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 - (void)dealloc {
