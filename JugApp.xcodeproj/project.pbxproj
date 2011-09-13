@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C903E6B3141F711F0053C00F /* table_sep.png in Resources */ = {isa = PBXBuildFile; fileRef = C903E6B1141F711F0053C00F /* table_sep.png */; };
+		C903E6B4141F711F0053C00F /* table_sep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C903E6B2141F711F0053C00F /* table_sep@2x.png */; };
+		C903E6B9141F71B60053C00F /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C903E6B7141F71B60053C00F /* EventDetailsViewController.m */; };
+		C903E6BA141F71B60053C00F /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C903E6B8141F71B60053C00F /* EventDetailsViewController.xib */; };
 		C9047D41141E1FF400FFAFB3 /* home_btn_about_default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D2A141E1FF400FFAFB3 /* home_btn_about_default.png */; };
 		C9047D42141E1FF400FFAFB3 /* home_btn_about_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D2B141E1FF400FFAFB3 /* home_btn_about_pressed.png */; };
 		C9047D43141E1FF400FFAFB3 /* home_btn_about_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D2C141E1FF400FFAFB3 /* home_btn_about_selected.png */; };
@@ -91,6 +95,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C903E6B1141F711F0053C00F /* table_sep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_sep.png; sourceTree = "<group>"; };
+		C903E6B2141F711F0053C00F /* table_sep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_sep@2x.png"; sourceTree = "<group>"; };
+		C903E6B6141F71B60053C00F /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		C903E6B7141F71B60053C00F /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		C903E6B8141F71B60053C00F /* EventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
 		C9047D2A141E1FF400FFAFB3 /* home_btn_about_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_about_default.png; sourceTree = "<group>"; };
 		C9047D2B141E1FF400FFAFB3 /* home_btn_about_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_about_pressed.png; sourceTree = "<group>"; };
 		C9047D2C141E1FF400FFAFB3 /* home_btn_about_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_about_selected.png; sourceTree = "<group>"; };
@@ -308,6 +317,8 @@
 		C98C72E613E21828007B08DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C903E6B1141F711F0053C00F /* table_sep.png */,
+				C903E6B2141F711F0053C00F /* table_sep@2x.png */,
 				C9047D5C141E23A600FFAFB3 /* logo_hd.png */,
 				C9047D58141E221D00FFAFB3 /* jugapp_icon.png */,
 				C9047D2A141E1FF400FFAFB3 /* home_btn_about_default.png */,
@@ -347,6 +358,7 @@
 				C9F4351E1415771E0067F0B1 /* NewViewController.xib */,
 				C9EB56E813DE1E9400167552 /* InfoViewController.xib */,
 				C971EB6013D78173005518D6 /* MainWindow.xib */,
+				C903E6B8141F71B60053C00F /* EventDetailsViewController.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -489,6 +501,8 @@
 		C9F43519141573130067F0B1 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C903E6B6141F71B60053C00F /* EventDetailsViewController.h */,
+				C903E6B7141F71B60053C00F /* EventDetailsViewController.m */,
 				C9A0C3DC141E985A004C2AFC /* EventViewController.h */,
 				C9A0C3DD141E985A004C2AFC /* EventViewController.m */,
 				C9EB56DD13DE15F200167552 /* EventsViewController.h */,
@@ -601,6 +615,9 @@
 				C9047D5D141E23A700FFAFB3 /* logo_hd.png in Resources */,
 				C9A0C3E0141E985A004C2AFC /* EventViewController.xib in Resources */,
 				C9A0C3E5141EBA86004C2AFC /* RootViewController.xib in Resources */,
+				C903E6B3141F711F0053C00F /* table_sep.png in Resources */,
+				C903E6B4141F711F0053C00F /* table_sep@2x.png in Resources */,
+				C903E6BA141F71B60053C00F /* EventDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +669,7 @@
 				C9A0C3DF141E985A004C2AFC /* EventViewController.m in Sources */,
 				C9A0C3E4141EBA86004C2AFC /* RootViewController.m in Sources */,
 				C9A0C3E8141EBEC4004C2AFC /* JugsController.m in Sources */,
+				C903E6B9141F71B60053C00F /* EventDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "EventsViewController.h"
 #import "Event.h"
 #import "EventViewController.h"
+#import "EventDetailsViewController.h"
 
 #import "InfoViewController.h"
 
@@ -111,9 +112,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Event *e = [self.events objectAtIndex:indexPath.row]; 
-    EventViewController *controller = [[EventViewController alloc] initWithNibName:@"EventViewController" bundle:nil];
+    //    EventViewController *controller = [[EventViewController alloc] initWithNibName:@"EventViewController" bundle:nil];
+    EventDetailsViewController *controller = [[EventDetailsViewController alloc] initWithNibName:@"EventDetailsViewController" bundle:nil];
     controller.event = e;
-    controller.title = @"Event";
+    controller.title = @"Event Details";
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
 }
