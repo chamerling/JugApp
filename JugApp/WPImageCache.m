@@ -5,12 +5,12 @@
 //  Created by Josh Bassett on 15/07/09.
 //
 
-#import "ImageCache.h"
+#import "WPImageCache.h"
 
 
-@implementation ImageCache
+@implementation WPImageCache
 
-static ImageCache *sharedImageCache;
+static WPImageCache *sharedImageCache;
 
 - (id)init {
     if ((self = [super init])) {
@@ -25,9 +25,9 @@ static ImageCache *sharedImageCache;
     [super dealloc];
 }
 
-+ (ImageCache *)sharedImageCache {
++ (WPImageCache *)sharedImageCache {
     if (!sharedImageCache) {
-        sharedImageCache = [[ImageCache alloc] init];
+        sharedImageCache = [[WPImageCache alloc] init];
     }
 
     return sharedImageCache;

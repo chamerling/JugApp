@@ -8,12 +8,12 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ImageCache : NSObject {
+@interface WPImageCache : NSObject {
 @private
     NSMutableDictionary *_data;
 }
 
-+ (ImageCache *)sharedImageCache;
++ (WPImageCache *)sharedImageCache;
 
 - (void)storeData:(NSData *)data forURL:(NSURL *)url;
 - (NSData *)dataForURL:(NSURL *)url;
