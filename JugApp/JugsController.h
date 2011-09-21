@@ -20,4 +20,6 @@
 - (IBAction)info:(id)sender;
 - (IBAction)map:(id)sender;
 
+- (void) editToolbarAction;
+
 @end

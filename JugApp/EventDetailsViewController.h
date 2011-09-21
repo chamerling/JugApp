@@ -25,6 +25,6 @@
 - (void)addToCalendar;
 - (void)tweet;
 
-- (void)eventAction;
+- (void)toolbarAction;
 
 @end

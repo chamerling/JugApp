@@ -35,6 +35,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+# pragma mark - View lifecycle
+
 - (void) viewDidLoad
 {
     self.title = @"JUGApp";
@@ -66,6 +68,20 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // setting the button here will create the uitoolbar with them, just hide the bar on viewWillDisappear
+    [[self navigationController] setToolbarHidden: NO animated:NO];
+    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editToolbarAction)];
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [self setToolbarItems:[NSArray arrayWithObjects:flexible, actionButton, nil] animated:YES];
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[self navigationController] setToolbarHidden: YES animated:YES];    
+    [super viewWillDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -154,6 +170,12 @@
     view.title = @"Map";
     view.jugs = jugs;
     [self.navigationController pushViewController:view animated:YES];
+}
+
+# pragma mark - toolbar actions
+- (void)editToolbarAction {
+    // NOP
+    NSLog(@"NOP");
 }
 
 @end

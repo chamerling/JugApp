@@ -229,7 +229,7 @@
 							<object class="IBUITextView" id="222632694">
 								<reference key="NSNextResponder" ref="775159032"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{0, 134}, {320, 262}}</string>
+								<string key="NSFrame">{{0, 134}, {320, 222}}</string>
 								<reference key="NSSuperview" ref="775159032"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -474,7 +474,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">23</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -490,6 +490,7 @@
 							<string>newsDate</string>
 							<string>newsDetails</string>
 							<string>newsTags</string>
+							<string>toobar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -497,6 +498,7 @@
 							<string>UILabel</string>
 							<string>UITextView</string>
 							<string>UILabel</string>
+							<string>UIToolbar</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -507,6 +509,7 @@
 							<string>newsDate</string>
 							<string>newsDetails</string>
 							<string>newsTags</string>
+							<string>toobar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -525,6 +528,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">newsTags</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">toobar</string>
+								<string key="candidateClassName">UIToolbar</string>
 							</object>
 						</object>
 					</object>

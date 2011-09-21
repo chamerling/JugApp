@@ -31,33 +31,21 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    UIToolbar *toolbar = [[UIToolbar alloc] init];
-    toolbar.barStyle = UIBarStyleDefault;
-    
-    CGFloat navigationBarHeight = CGRectGetMaxY(self.navigationController.navigationBar.frame);
-    CGFloat toolbarHeight = [toolbar frame].size.height;
-    CGRect rootViewBounds = self.parentViewController.view.bounds;
-    CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
-    CGRect rectArea = CGRectMake(0, CGRectGetHeight(rootViewBounds) - navigationBarHeight - 44, rootViewWidth, toolbarHeight);
-    
-    //Reposition and resize the receiver
-    [toolbar setFrame:rectArea];
-    [toolbar setAutoresizesSubviews:YES];
-    [toolbar sizeToFit];
-
-    // create the toolbar
-    [toolbar sizeToFit];
-    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(eventAction)];
+- (void)viewDidAppear:(BOOL)animated {
+    // setting the button here will create the uitoolbar with them, just hide the bar on viewWillDisappear
+    [[self navigationController] setToolbarHidden: NO animated:YES];
+    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(toolbarAction)];
     UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    [toolbar setItems:[NSArray arrayWithObjects:flexible, actionButton, nil]];
-    
-    [self.view addSubview:toolbar];
-    
-    // TODO releases;
+    [self setToolbarItems:[NSArray arrayWithObjects:flexible, actionButton, nil] animated:YES];
+    [super viewDidAppear:animated];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[self navigationController] setToolbarHidden: YES animated:YES];    
+    [super viewWillDisappear:animated];
+}
+
 
 - (void)viewDidLoad
 {
@@ -112,7 +100,7 @@
 
 # pragma mark - Action sheet related stuff
 
-- (void)eventAction {
+- (void)toolbarAction {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Actions", @"")
                                                              delegate:self 
                                                     cancelButtonTitle:NSLocalizedString(@"Cancel", @"") 
@@ -137,7 +125,7 @@
 }
 
 
-# pragma mark - Sheet Actions
+# pragma mark - Toolbar Actions
 
 - (void)addToCalendar {
     NSLog(@"Add to calendar");

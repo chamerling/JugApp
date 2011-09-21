@@ -31,6 +31,21 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewDidAppear:(BOOL)animated {
+    // setting the button here will create the uitoolbar with them, just hide the bar on viewWillDisappear
+    [[self navigationController] setToolbarHidden: NO animated:YES];
+    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(toolbarAction)];
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [self setToolbarItems:[NSArray arrayWithObjects:flexible, actionButton, nil] animated:YES];
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[self navigationController] setToolbarHidden: YES animated:YES];    
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad
 {
     if (self.news) {
@@ -76,4 +91,32 @@
     [newsDetails setText:[NSString stringWithFormat:@" %@", [self.news content]]];
     [newsTags setText:[NSString stringWithFormat:@""]];
 }
+
+# pragma mark - Action sheet related stuff
+
+- (void)toolbarAction {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Actions", @"")
+                                                             delegate:self 
+                                                    cancelButtonTitle:NSLocalizedString(@"Cancel", @"") 
+                                               destructiveButtonTitle:nil 
+                                                    otherButtonTitles:@"Tweet it!", nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+	[actionSheet showInView:self.view];
+	[actionSheet release];    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"%d", buttonIndex);
+    if (buttonIndex == 0) {
+        [self tweet];
+    } else {
+        // NOP
+    }
+}
+
+#pragma mark - toolbar actions
+- (void) tweet {
+    NSLog(@"Tweet it!");
+}
+
 @end
