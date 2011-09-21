@@ -13,13 +13,14 @@
 }
 @property (nonatomic, retain) NSMutableArray *jugs;
 
+#pragma mark - loading data
 - (void)loadDataFromURL:(NSString*)url;
 - (void)launchLoadData;
 - (void)loadData;
 
-- (IBAction)info:(id)sender;
-- (IBAction)map:(id)sender;
-
-- (void) editToolbarAction;
+#pragma mark - actions
+- (void) settingsAction;
+- (void) addAction;
+- (void) editAction;
 
 @end

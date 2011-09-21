@@ -63,6 +63,10 @@
 		C9AD7877140D84E5000340F9 /* AsynchronousImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD7875140D84E5000340F9 /* AsynchronousImageView.m */; };
 		C9AD787A140D8592000340F9 /* WPImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD7879140D8592000340F9 /* WPImageCache.m */; };
 		C9AD787F140D8F5D000340F9 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9AD787E140D8F5C000340F9 /* license.txt */; };
+		C9ADB780142A9437001B2BF6 /* JUGAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB77E142A9437001B2BF6 /* JUGAddViewController.m */; };
+		C9ADB781142A9437001B2BF6 /* JUGAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB77F142A9437001B2BF6 /* JUGAddViewController.xib */; };
+		C9ADB786142A94C0001B2BF6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB784142A94C0001B2BF6 /* SettingsViewController.m */; };
+		C9ADB787142A94C0001B2BF6 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB785142A94C0001B2BF6 /* SettingsViewController.xib */; };
 		C9BBCD8F13E8A5F1000A3D84 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBCD8E13E8A5F1000A3D84 /* News.m */; };
 		C9BBCD9313E8A83A000A3D84 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBCD9213E8A83A000A3D84 /* NewsViewController.m */; };
 		C9BF902C13E9DA46007326D9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BF902B13E9DA46007326D9 /* MapViewController.m */; };
@@ -202,6 +206,12 @@
 		C9AD7879140D8592000340F9 /* WPImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPImageCache.m; sourceTree = "<group>"; };
 		C9AD787E140D8F5C000340F9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = license.txt; path = /Users/chamerling/Dev/sources/perso/JugApp/license.txt; sourceTree = "<absolute>"; };
 		C9AD7884140D93D3000340F9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C9ADB77D142A9437001B2BF6 /* JUGAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUGAddViewController.h; sourceTree = "<group>"; };
+		C9ADB77E142A9437001B2BF6 /* JUGAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUGAddViewController.m; sourceTree = "<group>"; };
+		C9ADB77F142A9437001B2BF6 /* JUGAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JUGAddViewController.xib; sourceTree = "<group>"; };
+		C9ADB783142A94C0001B2BF6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C9ADB784142A94C0001B2BF6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C9ADB785142A94C0001B2BF6 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		C9BBCD8D13E8A5F1000A3D84 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		C9BBCD8E13E8A5F1000A3D84 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		C9BBCD9113E8A83A000A3D84 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -458,6 +468,8 @@
 		C998CD1D1410FDF700531B65 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				C9ADB77F142A9437001B2BF6 /* JUGAddViewController.xib */,
+				C9ADB785142A94C0001B2BF6 /* SettingsViewController.xib */,
 				C9A0C3E3141EBA84004C2AFC /* RootViewController.xib */,
 				C9A0C3DE141E985A004C2AFC /* EventViewController.xib */,
 				C9EB56E813DE1E9400167552 /* InfoViewController.xib */,
@@ -575,6 +587,8 @@
 			children = (
 				C9A0C3E1141EBA83004C2AFC /* RootViewController.h */,
 				C9A0C3E2141EBA83004C2AFC /* RootViewController.m */,
+				C9ADB783142A94C0001B2BF6 /* SettingsViewController.h */,
+				C9ADB784142A94C0001B2BF6 /* SettingsViewController.m */,
 				C9F43519141573130067F0B1 /* Events */,
 				C9F4351B1415736C0067F0B1 /* JUG */,
 				C9F43518141572800067F0B1 /* Members */,
@@ -637,6 +651,8 @@
 				C94D9E9513DF3364000A4F16 /* JugDetailsViewController.m */,
 				C9A0C3E6141EBEC4004C2AFC /* JugsController.h */,
 				C9A0C3E7141EBEC4004C2AFC /* JugsController.m */,
+				C9ADB77D142A9437001B2BF6 /* JUGAddViewController.h */,
+				C9ADB77E142A9437001B2BF6 /* JUGAddViewController.m */,
 			);
 			name = JUG;
 			sourceTree = "<group>";
@@ -853,6 +869,8 @@
 				C9EACE34142365A900919BCC /* JUGMapView.xib in Resources */,
 				C946D4A51427AAB800D9E5F3 /* JUGsMapView.xib in Resources */,
 				C946D4B41427B48100D9E5F3 /* NewsDetaiksViewController.xib in Resources */,
+				C9ADB781142A9437001B2BF6 /* JUGAddViewController.xib in Resources */,
+				C9ADB787142A94C0001B2BF6 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +946,8 @@
 				C946D4A41427AAB800D9E5F3 /* JUGsMapView.m in Sources */,
 				C946D4B31427B48100D9E5F3 /* NewsDetaiksViewController.m in Sources */,
 				C946D4B71427EC4100D9E5F3 /* JUGPlace.m in Sources */,
+				C9ADB780142A9437001B2BF6 /* JUGAddViewController.m in Sources */,
+				C9ADB786142A94C0001B2BF6 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

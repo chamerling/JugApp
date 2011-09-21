@@ -13,6 +13,8 @@
 #import "Constants.h"
 #import "InfoViewController.h"
 #import "JUGsMapView.h"
+#import "SettingsViewController.h"
+#import "JUGAddViewController.h"
 
 @implementation JugsController
 
@@ -41,15 +43,15 @@
 {
     self.title = @"JUGApp";
     
-    // add info button...
-    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(info:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    [infoButton release];
+    // add button
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction)];
+    //[addButton addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = addButton;
+    [addButton release];
     
-    UIButton *mapButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    [mapButton addTarget:self action:@selector(map:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mapButton];
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editAction)];
+    self.navigationItem.leftBarButtonItem = editButton;
+    [editButton release];
     
     // load the data if not already here...
     if (self.jugs) {
@@ -72,10 +74,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     // setting the button here will create the uitoolbar with them, just hide the bar on viewWillDisappear
-    [[self navigationController] setToolbarHidden: NO animated:NO];
-    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editToolbarAction)];
-    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    [self setToolbarItems:[NSArray arrayWithObjects:flexible, actionButton, nil] animated:YES];
+    [[self navigationController] setToolbarHidden: NO animated:YES];
+    UIBarButtonItem *set = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(settingsAction)];
+    [self setToolbarItems:[NSArray arrayWithObjects:set, nil] animated:YES];
     [super viewDidAppear:animated];
 }
 
@@ -159,23 +160,25 @@
 }
 
 #pragma mark - Special actions
--(void)info:(id)sender {
-    InfoViewController *infoView = [[InfoViewController alloc] init];
-    infoView.title = @"About";
-    [self.navigationController pushViewController:infoView animated:YES];
+
+-(void)settingsAction {
+    SettingsViewController *controller = [[SettingsViewController alloc] init];
+    controller.title = @"Settings";
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
--(void) map:(id)sender {
-    JUGsMapView *view = [[JUGsMapView alloc] init];
-    view.title = @"Map";
-    view.jugs = jugs;
-    [self.navigationController pushViewController:view animated:YES];
+- (void)addAction {
+    JUGAddViewController *controller = [[JUGAddViewController alloc] init];
+    controller.title = @"Add JUGs";
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 # pragma mark - toolbar actions
-- (void)editToolbarAction {
+- (void)editAction {
     // NOP
-    NSLog(@"NOP");
+    NSLog(@"TODO");
 }
 
 @end
