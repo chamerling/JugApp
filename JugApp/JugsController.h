@@ -18,5 +18,6 @@
 - (void)loadData;
 
 - (IBAction)info:(id)sender;
+- (IBAction)map:(id)sender;
 
 @end

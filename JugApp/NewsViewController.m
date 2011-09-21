@@ -7,8 +7,8 @@
 //
 
 #import "NewsViewController.h"
-#import "NewViewController.h"
 #import "News.h"
+#import "NewsDetaiksViewController.h"
 
 
 @implementation NewsViewController
@@ -106,8 +106,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger selected = indexPath.row;
-    News *n = [news objectAtIndex:selected]; 
-    NewViewController *controller = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
+    News *n = [self.news objectAtIndex:selected]; 
+    NewsDetaiksViewController *controller = [[NewsDetaiksViewController alloc] initWithNibName:@"NewsDetaiksViewController" bundle:nil];
     controller.news = n;
     controller.title = n.title;
     [self.navigationController pushViewController:controller animated:YES];

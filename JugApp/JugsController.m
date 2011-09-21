@@ -12,6 +12,7 @@
 #import "JSONLoader.h"
 #import "Constants.h"
 #import "InfoViewController.h"
+#import "JUGsMapView.h"
 
 @implementation JugsController
 
@@ -43,6 +44,10 @@
     [infoButton addTarget:self action:@selector(info:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [infoButton release];
+    
+    UIButton *mapButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [mapButton addTarget:self action:@selector(map:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mapButton];
     
     // load the data if not already here...
     if (self.jugs) {
@@ -142,6 +147,13 @@
     InfoViewController *infoView = [[InfoViewController alloc] init];
     infoView.title = @"About";
     [self.navigationController pushViewController:infoView animated:YES];
+}
+
+-(void) map:(id)sender {
+    JUGsMapView *view = [[JUGsMapView alloc] init];
+    view.title = @"Map";
+    view.jugs = jugs;
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 @end

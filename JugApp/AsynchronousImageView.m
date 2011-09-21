@@ -9,7 +9,7 @@
 
 #import "AsynchronousImageView.h"
 
-#import "ImageCache.h"
+#import "WPImageCache.h"
 
 
 @interface AsynchronousImageView (Private)
@@ -62,7 +62,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)theConnection {
-    ImageCache *cache =  [ImageCache sharedImageCache];
+    WPImageCache *cache =  [WPImageCache sharedImageCache];
 	
     if (data != nil) {
 		[cache storeData:data forURL:url];
@@ -82,7 +82,7 @@
 #pragma mark Public Methods
 
 - (void)loadImageFromURL:(NSURL *)theUrl {
-    ImageCache *cache =  [ImageCache sharedImageCache];
+    WPImageCache *cache =  [WPImageCache sharedImageCache];
     
     if (isBlavatar) {
         if (isWPCOM)

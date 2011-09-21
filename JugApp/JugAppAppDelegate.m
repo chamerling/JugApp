@@ -78,5 +78,9 @@
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = active;
 }
 
++ (JugAppAppDelegate*) sharedAppDelegate {
+	return (JugAppAppDelegate*) [UIApplication sharedApplication].delegate;
+}
+
 
 @end

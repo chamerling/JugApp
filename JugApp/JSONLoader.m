@@ -55,6 +55,8 @@
         info.twitter = [NSString stringWithFormat:@"%@", [jug objectForKey:@"twitter"]];
         info.apiURL = [NSString stringWithFormat:@"%@", [jug objectForKey:@"api"]];
         info.apiVersion = [NSString stringWithFormat:@"%@", [jug objectForKey:@"apiVersion"]];
+        info.longitude = [NSString stringWithFormat:@"%@", [jug objectForKey:@"long"]];
+        info.latitude = [NSString stringWithFormat:@"%@", [jug objectForKey:@"lat"]];
         [result addObject:info];
     }
 

@@ -18,6 +18,8 @@
 @synthesize email;
 @synthesize apiURL;
 @synthesize apiVersion;
+@synthesize longitude;
+@synthesize latitude;
 
 - (id)init
 {
@@ -39,6 +41,8 @@
     [email dealloc];
     [apiURL dealloc];
     [apiVersion dealloc];
+    [longitude dealloc];
+    [latitude dealloc];
     [super dealloc];
 }
 

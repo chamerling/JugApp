@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface EventDetailsViewController : UIViewController {
+@interface EventDetailsViewController : UIViewController<UIActionSheetDelegate> {
+    IBOutlet UIView *mainView;
     UILabel *eventTitleLabel;
     IBOutlet UILabel *eventDateLabel;
     IBOutlet UILabel *tagsLbel;
-    IBOutlet UITextView *eventDescriptionTextView;
-    
+    IBOutlet UITextView *eventDescriptionTextView;    
     Event *event;
 }
 
@@ -22,6 +22,9 @@
 @property (nonatomic, retain) Event *event;
 
 - (void)showEvent:(Event *)event;
+- (void)addToCalendar;
+- (void)tweet;
 
+- (void)eventAction;
 
 @end

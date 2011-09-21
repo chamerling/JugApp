@@ -15,6 +15,8 @@
 #import "NewsViewController.h"
 #import "JSONLoader.h"
 #import "WebViewController.h"
+#import "TweetsViewController.h"
+#import "JUGMapView.h"
 
 #define kSectionDescription		0
 #define kSectionNews            1
@@ -29,6 +31,8 @@
 
 #define kRowTagEvents           1
 #define kRowTagNews             0
+
+#define kRowTagMap              0
 
 #define kActionSheetOpenWebPage	1
 #define kActionSheetSendEmail	2
@@ -325,7 +329,17 @@
                 default:
                     break;
             }
-   }
+    } else if (indexPath.section == kSectionMore) {
+        if (indexPath.row == kRowTagMap) {
+            JUGMapView *controller = [[JUGMapView alloc] init];
+            controller.title = @"Map";
+            controller.jugInformation = self.jug;
+            [self.navigationController pushViewController:controller animated:YES];
+            [controller release];
+        }
+
+        
+    }
 }
 
 #pragma mark - Actions
@@ -390,16 +404,21 @@
 
 - (void) showTweets {
     if (jug.twitter == nil) return;
+
+    /*
     NSString *twitter = [NSString stringWithFormat:@"http://m.twitter.com/%@", jug.twitter];
-    // TODO : show tweets from twitter.com or load mobile webpage
     WebViewController *controller = [[WebViewController alloc] init];
     controller.url = twitter;
     controller.title = @"Tweets";
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
-
-    //NSURL *webURL = [NSURL URLWithString:twitter];
-    //[[UIApplication sharedApplication] openURL:webURL];
+     */
+    
+    TweetsViewController *tweets = [[TweetsViewController alloc] init];
+    tweets.tag = jug.twitter;
+    [self.navigationController pushViewController:tweets
+                                         animated:YES];
+    [tweets release];
 }
 
 - (void)showMap {

@@ -18,6 +18,8 @@
     NSString *email;
     NSString *apiURL;
     NSString *apiVersion;
+    NSString *longitude;
+    NSString *latitude;
 }
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *description;
@@ -28,4 +30,6 @@
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *apiURL;
 @property (nonatomic, retain) NSString *apiVersion;
+@property (nonatomic, retain) NSString *longitude;
+@property (nonatomic, retain) NSString *latitude;
 @end

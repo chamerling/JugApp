@@ -18,6 +18,9 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navController;
+
++ (JugAppAppDelegate*) sharedAppDelegate;
+
 @property (nonatomic, assign) BOOL isLoadingData;
 
 - (void)showNetworkActivity:(BOOL)active;
