@@ -7,6 +7,10 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "Constants.h"
+
+#import <EventKit/EventKit.h>
+#import <EventKitUI/EventKitUI.h>
 
 @implementation EventDetailsViewController
 @synthesize eventTitleLabel;
@@ -128,11 +132,39 @@
 # pragma mark - Toolbar Actions
 
 - (void)addToCalendar {
-    NSLog(@"Add to calendar");
+    EKEventEditViewController *eventController = [[EKEventEditViewController alloc] initWithNibName:nil bundle:nil];
+    EKEventStore *eventStore = [[EKEventStore alloc] init];
+    eventController.eventStore = eventStore;
     
+    NSString *start = [[NSString alloc] initWithFormat:@"%@ 07:00:00 PM", event.date];
+    NSString *end = [[NSString alloc] initWithFormat:@"%@ 09:00:00 PM", event.date];
+
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd hh:mm:ss aa"];
+    NSDate *startDate = [df dateFromString: start];
+    NSDate *endDate = [df dateFromString: end];
+    
+    eventController.event.title = event.title;
+    eventController.event.location = event.location;
+    eventController.event.startDate = startDate;
+    eventController.event.endDate = endDate;
+    eventController.event.notes =  event.description;
+    [eventController.event setAlarms:[NSMutableArray arrayWithObject:[EKAlarm alarmWithRelativeOffset:-7200]]];
+    
+    [self presentModalViewController:eventController animated:YES];
+    eventController.editViewDelegate = self;
+    
+    [eventController release];
 }
 
 - (void)tweet {
     NSLog(@"Tweet");
+}
+
+#pragma mark - event delegate
+- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action {
+    [self dismissModalViewControllerAnimated:YES];
+    
+    // TODO : display HUD message to say if done or not
 }
 @end

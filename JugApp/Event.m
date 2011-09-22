@@ -12,6 +12,7 @@
 @synthesize title;
 @synthesize date;
 @synthesize description;
+@synthesize location;
 
 - (id)init
 {
@@ -27,6 +28,7 @@
     [title dealloc];
     [date dealloc];
     [description dealloc];
+    [location dealloc];
     [super dealloc];
 }
 

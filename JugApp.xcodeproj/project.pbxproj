@@ -37,6 +37,8 @@
 		C9047D59141E221D00FFAFB3 /* jugapp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D58141E221D00FFAFB3 /* jugapp_icon.png */; };
 		C9047D5B141E224500FFAFB3 /* jugapp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D5A141E224500FFAFB3 /* jugapp_icon.png */; };
 		C9047D5D141E23A700FFAFB3 /* logo_hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D5C141E23A600FFAFB3 /* logo_hd.png */; };
+		C91BCF4E142BD6890041C5A2 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BCF4D142BD6890041C5A2 /* EventKit.framework */; };
+		C91BCF50142BDEE60041C5A2 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BCF4F142BDEE60041C5A2 /* EventKitUI.framework */; };
 		C92730C7142B52FC00807706 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C92730C6142B52FC00807706 /* JSONParser.m */; };
 		C946D4A41427AAB800D9E5F3 /* JUGsMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = C946D4A21427AAB800D9E5F3 /* JUGsMapView.m */; };
 		C946D4A51427AAB800D9E5F3 /* JUGsMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946D4A31427AAB800D9E5F3 /* JUGsMapView.xib */; };
@@ -164,6 +166,8 @@
 		C9047D58141E221D00FFAFB3 /* jugapp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugapp_icon.png; sourceTree = "<group>"; };
 		C9047D5A141E224500FFAFB3 /* jugapp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugapp_icon.png; sourceTree = "<group>"; };
 		C9047D5C141E23A600FFAFB3 /* logo_hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_hd.png; path = ../../../../../../Desktop/logo_hd.png; sourceTree = "<group>"; };
+		C91BCF4D142BD6890041C5A2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		C91BCF4F142BDEE60041C5A2 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		C92730C5142B52FC00807706 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		C92730C6142B52FC00807706 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		C946D4A11427AAB800D9E5F3 /* JUGsMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUGsMapView.h; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91BCF50142BDEE60041C5A2 /* EventKitUI.framework in Frameworks */,
+				C91BCF4E142BD6890041C5A2 /* EventKit.framework in Frameworks */,
 				C9FB2F2D1422A22800907A8A /* MapKit.framework in Frameworks */,
 				C9FB2F2B1422A21C00907A8A /* CoreLocation.framework in Frameworks */,
 				C9FB2F291422A1D700907A8A /* libz.1.2.3.dylib in Frameworks */,
@@ -377,6 +383,8 @@
 		C971EB4D13D78173005518D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C91BCF4F142BDEE60041C5A2 /* EventKitUI.framework */,
+				C91BCF4D142BD6890041C5A2 /* EventKit.framework */,
 				C9FB2F2C1422A22800907A8A /* MapKit.framework */,
 				C9FB2F2A1422A21C00907A8A /* CoreLocation.framework */,
 				C9FB2F281422A1D700907A8A /* libz.1.2.3.dylib */,

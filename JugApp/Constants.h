@@ -16,4 +16,6 @@
 #define projectName       @"JugApp"
 #define projectWebPage    @"http://chamerling.github.com/JugApp/"
 #define jugPage           @"http://www.jug-montpellier.org/"
+
+#define eventDatePattern  @"yyyy-MM-dd"
 #endif

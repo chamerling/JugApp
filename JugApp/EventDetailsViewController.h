@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import <EventKitUI/EventKitUI.h>
 
-@interface EventDetailsViewController : UIViewController<UIActionSheetDelegate> {
+@interface EventDetailsViewController : UIViewController<UIActionSheetDelegate, EKEventEditViewDelegate> {
     IBOutlet UIView *mainView;
     UILabel *eventTitleLabel;
     IBOutlet UILabel *eventDateLabel;
