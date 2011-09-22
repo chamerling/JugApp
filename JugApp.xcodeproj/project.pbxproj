@@ -37,6 +37,7 @@
 		C9047D59141E221D00FFAFB3 /* jugapp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D58141E221D00FFAFB3 /* jugapp_icon.png */; };
 		C9047D5B141E224500FFAFB3 /* jugapp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D5A141E224500FFAFB3 /* jugapp_icon.png */; };
 		C9047D5D141E23A700FFAFB3 /* logo_hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C9047D5C141E23A600FFAFB3 /* logo_hd.png */; };
+		C92730C7142B52FC00807706 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C92730C6142B52FC00807706 /* JSONParser.m */; };
 		C946D4A41427AAB800D9E5F3 /* JUGsMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = C946D4A21427AAB800D9E5F3 /* JUGsMapView.m */; };
 		C946D4A51427AAB800D9E5F3 /* JUGsMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946D4A31427AAB800D9E5F3 /* JUGsMapView.xib */; };
 		C946D4B31427B48100D9E5F3 /* NewsDetaiksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946D4B11427B48100D9E5F3 /* NewsDetaiksViewController.m */; };
@@ -163,6 +164,8 @@
 		C9047D58141E221D00FFAFB3 /* jugapp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugapp_icon.png; sourceTree = "<group>"; };
 		C9047D5A141E224500FFAFB3 /* jugapp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugapp_icon.png; sourceTree = "<group>"; };
 		C9047D5C141E23A600FFAFB3 /* logo_hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_hd.png; path = ../../../../../../Desktop/logo_hd.png; sourceTree = "<group>"; };
+		C92730C5142B52FC00807706 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		C92730C6142B52FC00807706 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		C946D4A11427AAB800D9E5F3 /* JUGsMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUGsMapView.h; sourceTree = "<group>"; };
 		C946D4A21427AAB800D9E5F3 /* JUGsMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUGsMapView.m; sourceTree = "<group>"; };
 		C946D4A31427AAB800D9E5F3 /* JUGsMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JUGsMapView.xib; sourceTree = "<group>"; };
@@ -638,6 +641,8 @@
 			children = (
 				C9F3847213DF29C5009A0DEA /* JSONLoader.h */,
 				C9F3847313DF29C5009A0DEA /* JSONLoader.m */,
+				C92730C5142B52FC00807706 /* JSONParser.h */,
+				C92730C6142B52FC00807706 /* JSONParser.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -948,6 +953,7 @@
 				C946D4B71427EC4100D9E5F3 /* JUGPlace.m in Sources */,
 				C9ADB780142A9437001B2BF6 /* JUGAddViewController.m in Sources */,
 				C9ADB786142A94C0001B2BF6 /* SettingsViewController.m in Sources */,
+				C92730C7142B52FC00807706 /* JSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

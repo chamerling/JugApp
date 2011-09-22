@@ -9,12 +9,14 @@
 #import "JugsController.h"
 #import "JugInformation.h"
 #import "JugDetailsViewController.h"
-#import "JSONLoader.h"
 #import "Constants.h"
-#import "InfoViewController.h"
 #import "JUGsMapView.h"
 #import "SettingsViewController.h"
 #import "JUGAddViewController.h"
+#import "JSONParser.h"
+#import "Constants.h"
+
+#import "SVProgressHUD.h"
 
 @implementation JugsController
 
@@ -53,15 +55,6 @@
     self.navigationItem.leftBarButtonItem = editButton;
     [editButton release];
     
-    // load the data if not already here...
-    if (self.jugs) {
-        
-    } else {
-        // load the data from cache and from URL...
-        // for now just from URL...
-        [self launchLoadData];
-    }
-    
     [super viewDidLoad];
 }
 
@@ -78,6 +71,32 @@
     UIBarButtonItem *set = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(settingsAction)];
     [self setToolbarItems:[NSArray arrayWithObjects:set, nil] animated:YES];
     [super viewDidAppear:animated];
+    
+    if (self.jugs) {
+        
+    } else {
+    
+        [SVProgressHUD showInView:self.view];
+    
+        // By using [self requestWithURL:@"..."]; the reques is cancelled if the user closes this view controller
+        // FIXME : Use BaseViewController to manager http rquests...
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:jugRepository]];
+        [request setDelegate:self];
+        [request setDidFinishSelector:@selector(requestFinished:)];
+        [request setDidFailSelector:@selector(requestFailed:)];
+        [request startAsynchronous];
+    }
+}
+
+- (void)requestFinished:(ASIHTTPRequest*)request {
+    [SVProgressHUD dismiss];
+    JSONParser *parser = [[JSONParser alloc]init];
+    self.jugs = [parser getJugs:[request responseString]];
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+}
+
+- (void)requestFailed:(ASIHTTPRequest*)request {
+    [SVProgressHUD dismissWithError:[[request error] localizedDescription]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -110,6 +129,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     NSUInteger integer = [indexPath row];
@@ -138,25 +158,6 @@
 - (void)dealloc {
     [jugs release];
     [super dealloc];
-}
-
-# pragma mark - load data...
--(void)launchLoadData {
-    [NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];
-}
-
-- (void) loadData {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    [self loadDataFromURL:nil];
-    // reload UI in main thread is a good practice...
-    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-    [pool release];
-}
-
-- (void)loadDataFromURL:(NSString*)url {
-    JSONLoader *loader = [[JSONLoader alloc] init];
-    self.jugs = [loader getJugsFromURL:jugRepository];
-    [loader release];
 }
 
 #pragma mark - Special actions
